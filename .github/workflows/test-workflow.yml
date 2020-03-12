@@ -8,12 +8,21 @@ jobs:
         name: Greeting
         runs-on: ubuntu-latest
         steps:
-          # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+          - uses: actions/checkout@v2
+          # This step prints an output (time) from the previous step's action.
+          - name: Echo the greeting's time
+            run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+          # This step uses GitHub's hello-world-javascript-action:
+		  #   https://github.com/actions/hello-world-javascript-action
           - name: Hello world
             uses: actions/hello-world-javascript-action@v1
             with:
               who-to-greet: 'Greeting recipient'
             id: hello
-          # This step prints an output (time) from the previous step's action.
-          - name: Echo the greeting's time
-            run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+          - name: Setup up python 3.x
+            uses: actions/setup-python@v1
+            with:
+                python-version: '3.x'
+                architecture: 'x64'
+          - name: python version
+            run: python --version
