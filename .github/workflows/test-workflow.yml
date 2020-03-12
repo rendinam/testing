@@ -10,15 +10,19 @@ jobs:
         steps:
           - uses: actions/checkout@v2
           # This step prints an output (time) from the previous step's action.
-          - name: Echo the greeting's time
-            run: echo 'The time was ${{ steps.hello.outputs.time }}.'
+          #- name: Echo the greeting's time
+          #  run: echo 'The time is ${{ steps.hello.outputs.time }}.'
           # This step uses GitHub's hello-world-javascript-action:
           #   https://github.com/actions/hello-world-javascript-action
-          - name: Hello world
-            uses: actions/hello-world-javascript-action@v1
-            with:
-              who-to-greet: 'Greeting recipient'
-            id: hello
+          #- name: Hello world
+          #  uses: actions/hello-world-javascript-action@v1
+          #  with:
+          #    who-to-greet: 'Greeting recipient'
+          #  id: hello
+          - name: List
+            run: ls -alth
+          - name: pwd
+            run: pwd
           - name: Setup up python 3.x
             uses: actions/setup-python@v1
             with:
