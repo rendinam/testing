@@ -25,5 +25,7 @@ jobs:
             run: pip install .
           - name: run test
             run: testertron
+          - name: version dump
+            run: python -m "import testertron; print(testertron.__version___"
           - name: env var
             run: echo $GITHUB_REF
