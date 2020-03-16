@@ -25,7 +25,9 @@ jobs:
             run: pip install .
           - name: run test
             run: testertron
-          - name: version dump
-            run: python -c 'import testertron; print(testertron.__version__)'
+          - name: examine version
+            run: export VERSION=$(python -c 'import testertron; print(testertron.__version__)')
+          - name: print version from var
+            run: echo $VERSION
           - name: env var
             run: echo $GITHUB_REF
