@@ -26,7 +26,7 @@ jobs:
           - name: run test
             run: testertron
           - name: examine version
-            run: export VERSION=$(python -c 'import testertron; print(testertron.__version__)')
+            run: export VERSION=$(python -c 'import testertron; print(testertron.__version__)'); echo $VERSION
           - name: print version from var
             run: echo $VERSION
           - name: env var
