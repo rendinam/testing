@@ -11,9 +11,9 @@ jobs:
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
           - name: List
-            run: ls -alth
+            run: ls -l
           - name: git log
-            run: git log -3
+            run: git log
           - name: pwd
             run: pwd
           - name: Setup up python 3.x
@@ -28,8 +28,6 @@ jobs:
           - name: run test
             run: testertron
           - name: examine version and publish if criteria met
-            run: export VERSION=$(python -c 'import testertron; print(testertron.__version__)'); echo $VERSION
-          - name: print version from var
-            run: echo $VERSION
+            run: python -c 'import testertron; print(testertron.__version__)'
           - name: env var
             run: echo $GITHUB_REF
