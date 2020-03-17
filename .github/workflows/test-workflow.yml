@@ -25,5 +25,8 @@ jobs:
             run: python -c 'import testertron; print(testertron.__version__)'
           - name: install publication deps
             run: pip install twine
+          - name: prepare for publication
+            run: git clean -fxd
+                 python setup.py build sdist --format=gztar
           - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
