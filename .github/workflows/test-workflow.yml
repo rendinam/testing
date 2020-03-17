@@ -10,12 +10,8 @@ jobs:
         steps:
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
-          - name: List
-            run: ls -l
           - name: git log
             run: git log
-          - name: pwd
-            run: pwd
           - name: Setup up python 3.x
             uses: actions/setup-python@v1
             with:
@@ -25,9 +21,9 @@ jobs:
             run: python --version
           - name: install package
             run: pip install .
-          - name: run test
-            run: testertron
           - name: examine version and publish if criteria met
             run: python -c 'import testertron; print(testertron.__version__)'
-          - name: env var
+          - name: install publication deps
+            run: pip install twine
+          - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
