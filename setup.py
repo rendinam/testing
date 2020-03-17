@@ -12,7 +12,7 @@ setup(
             'testertron = testertron.cli.main:main',
         ],
     },
-    #install_requires=[
+    ##install_requires=[
     #    'github3.py'
     #],
     extras_require={
