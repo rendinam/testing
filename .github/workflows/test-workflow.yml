@@ -31,3 +31,5 @@ jobs:
             run: python setup.py build sdist --format=gztar
           - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
+          - name: publish
+            run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
