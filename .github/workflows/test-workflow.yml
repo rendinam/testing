@@ -6,13 +6,15 @@ on:
 jobs:
     build:
         name: Publish release to PyPI (testing)
+        env:
+            TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
         runs-on: ubuntu-latest
         steps:
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
           - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
-          - name: Dump TWINE var
+          - name: Dump TWINE_USERNAME
             run: echo "TWINE_USERNAME=${TWINE_USERNAME}"
           - name: git log
             run: git log
