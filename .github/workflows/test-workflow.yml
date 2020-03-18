@@ -10,6 +10,8 @@ jobs:
         steps:
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
+          - name: examine tag and publish if criteria met
+            run: echo $GITHUB_REF
           - name: git log
             run: git log
           - name: Setup up python 3.x
@@ -29,7 +31,5 @@ jobs:
             run: git clean -fxd
           - name: prepare for publication 2
             run: python setup.py build sdist --format=gztar
-          - name: examine tag and publish if criteria met
-            run: echo $GITHUB_REF
-          - name: publish
+          - name: publish to PyPI [testing]
             run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
