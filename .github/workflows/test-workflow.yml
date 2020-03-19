@@ -13,6 +13,13 @@ jobs:
         steps:
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
+          - name: custom action
+            id: custom_action_0
+            uses: rendinam/publicator-action
+            with:
+                who-to-greet: "Greetee"
+          - name: Get custom action's output
+            run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
           - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
           - name: Dump TWINE_USERNAME
