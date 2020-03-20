@@ -19,12 +19,12 @@ jobs:
               python-version: '3.x'
               architecture: 'x64'
 
-              #          # Check out the commit containing this workflow file.
-              #          - name: checkout repo
-              #            uses: actions/checkout@v2
-              #          
-              #          - name: env
-              #            run: env
+          # Check out the commit containing this workflow file.
+          - name: checkout repo
+            uses: actions/checkout@v2
+          
+          - name: env
+            run: env
               #          
               #          - name: custom action
               #            uses: rendinam/publicator-action@master
