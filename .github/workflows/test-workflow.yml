@@ -1,16 +1,17 @@
 name: Automatic publication of release to PyPI
+
 on:
-    release:
-        types: [published]
+  release:
+    types: [published]
 
 jobs:
-    build:
-        name: Publish release to PyPI (testing)
-        env:
-            TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-            TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
-        runs-on: ubuntu-latest
-        steps:
+  build:
+      #name: Publish release to PyPI (testing)
+      env:
+        TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+      runs-on: ubuntu-latest
+      steps:
 
         - name: Setup up python 3.x
           uses: actions/setup-python@v1
