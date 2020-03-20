@@ -12,48 +12,48 @@ jobs:
         runs-on: ubuntu-latest
         steps:
 
-            name: Setup up python 3.x
-            uses: actions/setup-python@v1
+        - name: Setup up python 3.x
+          uses: actions/setup-python@v1
             with:
-                python-version: '3.x'
-                architecture: 'x64'
+              python-version: '3.x'
+              architecture: 'x64'
 
-          # Check out the commit containing this workflow file.
-          uses: actions/checkout@v2
+        # Check out the commit containing this workflow file.
+        - uses: actions/checkout@v2
 
-          #- name: Try out local script execution
-          #- run: python pythonscript.py
+        - name: env
+          run: env
 
-          #- name: custom action
-          #- id: custom_action_0
-          #- uses: rendinam/publicator-action@master
-          #- with:
-          #-     who-to-greet: "Greetee"
+        #- name: custom action
+        #- id: custom_action_0
+        #- uses: rendinam/publicator-action@master
+        #- with:
+        #-     who-to-greet: "Greetee"
 
-          #- name: Get custom action's output
-          #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
+        #- name: Get custom action's output
+        #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
 
-          name: examine tag and publish if criteria met
+        - name: examine tag and publish if criteria met
           run: echo $GITHUB_REF
 
-          name: git log
+        - name: git log
           run: git log
 
-          name: python version
+        - name: python version
           run: python --version
 
-          # Installation smoke test
-          name: install package
+        # Installation smoke test
+        - name: install package
           run: pip install .
 
-          name: install publication deps
+        - name: install publication deps
           run: pip install twine
 
-          name: prepare for publication 1
+        - name: prepare for publication 1
           run: git clean -fxd
 
-          name: prepare for publication 2
+        - name: prepare for publication 2
           run: python setup.py build sdist --format=gztar
 
-          name: publish to PyPI [testing]
+        - name: publish to PyPI [testing]
           run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
