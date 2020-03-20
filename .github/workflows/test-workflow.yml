@@ -11,11 +11,11 @@ jobs:
             TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         runs-on: ubuntu-latest
         steps:
-            name: Setup up python 3.x
-                uses: actions/setup-python@v1
-                with:
-                    python-version: '3.x'
-                    architecture: 'x64'
+            #name: Setup up python 3.x
+            #    uses: actions/setup-python@v1
+            #    with:
+            #        python-version: '3.x'
+            #        architecture: 'x64'
 
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
