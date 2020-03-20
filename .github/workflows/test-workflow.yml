@@ -22,9 +22,9 @@ jobs:
           # Check out the commit containing this workflow file.
           - name: checkout repo
             uses: actions/checkout@v2
-          #
-          #        - name: env
-          #          run: env
+          
+          - name: env
+            run: env
           #
           #        - name: custom action
           #          uses: rendinam/publicator-action@master
