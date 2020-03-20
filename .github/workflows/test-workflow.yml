@@ -23,14 +23,14 @@ jobs:
           - name: Try out local script execution
             run: python pythonscript.py
 
-          - name: custom action
-            id: custom_action_0
-            uses: rendinam/publicator-action@master
-            with:
-                who-to-greet: "Greetee"
+            #- name: custom action
+            #- id: custom_action_0
+            #- uses: rendinam/publicator-action@master
+            #- with:
+            #-     who-to-greet: "Greetee"
 
-          - name: Get custom action's output
-            run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
+            #- name: Get custom action's output
+            #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
 
           - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
@@ -41,6 +41,7 @@ jobs:
           - name: python version
             run: python --version
 
+          # Installation smoke test
           - name: install package
             run: pip install .
 
