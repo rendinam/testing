@@ -11,6 +11,11 @@ jobs:
             TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
         runs-on: ubuntu-latest
         steps:
+            ##- name: Setup up python 3.x
+            ##- - uses: actions/setup-python@v1
+            ##- - with:
+            ##- -     python-version: '3.x'
+            ##- -     architecture: 'x64'
           # Check out the commit containing this workflow file.
           - uses: actions/checkout@v2
           - name: custom action
@@ -24,15 +29,8 @@ jobs:
             run: echo $GITHUB_REF
           - name: git log
             run: git log
-            #- name: Setup up python 3.x
-            #- uses: actions/setup-python@v1
-            #- with:
-            #-     python-version: '3.x'
-            #-     architecture: 'x64'
           - name: python version
             run: python --version
-          - name: python3 version
-            run: python3 --version
           - name: install package
             run: pip install .
           - name: examine version and publish if criteria met
