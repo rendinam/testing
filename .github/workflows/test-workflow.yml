@@ -25,9 +25,9 @@ jobs:
           run: env
 
         - name: custom action
-          id: custom_action_0
-          uses: rendinam/publicator-action@master
-          with:
+        - id: custom_action_0
+        - uses: rendinam/publicator-action@master
+        - with:
             who-to-greet: "Greetee"
 
         - name: Get custom action's output
