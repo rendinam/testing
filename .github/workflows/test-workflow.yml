@@ -19,15 +19,16 @@ jobs:
             architecture: 'x64'
 
         # Check out the commit containing this workflow file.
-        - uses: actions/checkout@v2
+        - name: checkout repo
+          uses: actions/checkout@v2
 
         - name: env
           run: env
 
         - name: custom action
-        - id: custom_action_0
-        - uses: rendinam/publicator-action@master
-        - with:
+          uses: rendinam/publicator-action@master
+          id: custom_action_0
+          with:
             who-to-greet: "Greetee"
 
         - name: Get custom action's output
