@@ -19,43 +19,43 @@ jobs:
               python-version: '3.x'
               architecture: 'x64'
 
-          # Check out the commit containing this workflow file.
-          - name: checkout repo
-            uses: actions/checkout@v2
-          
-          - name: env
-            run: env
-          
-          - name: custom action
-            uses: rendinam/publicator-action@master
-            id: custom_action_0
-            with:
-              who-to-greet: "Greetee"
-          
-          - name: Get custom action's output
-          - run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
-          
-          - name: examine tag and publish if criteria met
-            run: echo $GITHUB_REF
-          
-          - name: git log
-            run: git log
-          
-          - name: python version
-            run: python --version
-          
-          # Installation smoke test
-          - name: install package
-            run: pip install .
-          
-          - name: install publication deps
-            run: pip install twine
-          
-          - name: prepare for publication 1
-            run: git clean -fxd
-          
-          - name: prepare for publication 2
-            run: python setup.py build sdist --format=gztar
-          
-          - name: publish to PyPI [testing]
-            run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+              #          # Check out the commit containing this workflow file.
+              #          - name: checkout repo
+              #            uses: actions/checkout@v2
+              #          
+              #          - name: env
+              #            run: env
+              #          
+              #          - name: custom action
+              #            uses: rendinam/publicator-action@master
+              #            id: custom_action_0
+              #            with:
+              #              who-to-greet: "Greetee"
+              #          
+              #          - name: Get custom action's output
+              #          - run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
+              #          
+              #          - name: examine tag and publish if criteria met
+              #            run: echo $GITHUB_REF
+              #          
+              #          - name: git log
+              #            run: git log
+              #          
+              #          - name: python version
+              #            run: python --version
+              #          
+              #          # Installation smoke test
+              #          - name: install package
+              #            run: pip install .
+              #          
+              #          - name: install publication deps
+              #            run: pip install twine
+              #          
+              #          - name: prepare for publication 1
+              #            run: git clean -fxd
+              #          
+              #          - name: prepare for publication 2
+              #            run: python setup.py build sdist --format=gztar
+              #          
+              #          - name: publish to PyPI [testing]
+              #            run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
