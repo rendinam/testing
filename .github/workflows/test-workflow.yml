@@ -31,6 +31,8 @@ jobs:
             #-     architecture: 'x64'
           - name: python version
             run: python --version
+          - name: python3 version
+            run: python3 --version
           - name: install package
             run: pip install .
           - name: examine version and publish if criteria met
