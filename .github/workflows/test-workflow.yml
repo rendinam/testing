@@ -25,12 +25,12 @@ jobs:
           
           - name: env
             run: env
-          #
-          #        - name: custom action
-          #          uses: rendinam/publicator-action@master
-          #          id: custom_action_0
-          #          with:
-          #            who-to-greet: "Greetee"
+          
+          - name: custom action
+            uses: rendinam/publicator-action@master
+            id: custom_action_0
+            with:
+              who-to-greet: "Greetee"
           #
           #        - name: Get custom action's output
           #        - run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
