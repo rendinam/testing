@@ -47,15 +47,15 @@ jobs:
           # Installation smoke test
           - name: install package
             run: pip install .
-          #
-          #        - name: install publication deps
-          #          run: pip install twine
-          #
-          #        - name: prepare for publication 1
-          #          run: git clean -fxd
-          #
-          #        - name: prepare for publication 2
-          #          run: python setup.py build sdist --format=gztar
-          #
-          #        - name: publish to PyPI [testing]
-          #          run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+          
+          - name: install publication deps
+            run: pip install twine
+          
+          - name: prepare for publication 1
+            run: git clean -fxd
+          
+          - name: prepare for publication 2
+            run: python setup.py build sdist --format=gztar
+          
+          - name: publish to PyPI [testing]
+            run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
