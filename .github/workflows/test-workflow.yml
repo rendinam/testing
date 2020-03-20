@@ -30,7 +30,7 @@ jobs:
             uses: rendinam/publicator-action@master
             id: custom_action_0
             with:
-              who-to-greet: "Greetee"
+              git_tag: $GITHUB_REF
           
           - name: Get custom action's output
             run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
