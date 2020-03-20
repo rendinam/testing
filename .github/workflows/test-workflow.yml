@@ -22,15 +22,13 @@ jobs:
             run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
           - name: examine tag and publish if criteria met
             run: echo $GITHUB_REF
-          - name: Dump TWINE_USERNAME
-            run: echo "TWINE_USERNAME=${TWINE_USERNAME}"
           - name: git log
             run: git log
-          - name: Setup up python 3.x
-            uses: actions/setup-python@v1
-            with:
-                python-version: '3.x'
-                architecture: 'x64'
+            #- name: Setup up python 3.x
+            #- uses: actions/setup-python@v1
+            #- with:
+            #-     python-version: '3.x'
+            #-     architecture: 'x64'
           - name: python version
             run: python --version
           - name: install package
