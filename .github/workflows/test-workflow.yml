@@ -26,9 +26,9 @@ jobs:
           - name: custom action
             uses: rendinam/publicator-action@master
             id: custom_action_0
-            #with:
-            #  git_tag: $GITHUB_REF
-            #
+            with:
+                git_tag: $GITHUB_REF
+
           - name: Where am I
           - run: pwd
 
