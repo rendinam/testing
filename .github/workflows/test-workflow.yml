@@ -28,6 +28,9 @@ jobs:
             id: custom_action_0
             #with:
             #  git_tag: $GITHUB_REF
+            #
+          - name: Where am I
+          - run: echo "Top level working dir: $(pwd)"
 
           #- name: Get custom action's output
           #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
