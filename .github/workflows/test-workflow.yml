@@ -1,4 +1,4 @@
-name: Automatic publication of release to PyPI
+name: Publication of qualifying release to PyPI
 
 on:
   release:
@@ -13,11 +13,11 @@ jobs:
       runs-on: ubuntu-latest
       steps:
 
-          - name: Setup up python 3.x
-            uses: actions/setup-python@v1
-            with:
-              python-version: '3.x'
-              architecture: 'x64'
+          #- name: Setup up python 3.x
+          #  uses: actions/setup-python@v1
+          #  with:
+          #    python-version: '3.x'
+          #    architecture: 'x64'
 
           # Check out the commit containing this workflow file.
           - name: checkout repo
@@ -43,17 +43,17 @@ jobs:
 
 
           # Installation smoke test
-          - name: install package
-            run: pip install .
-          
-          - name: install publication deps
-            run: pip install twine
-          
-          - name: prepare for publication 1
-            run: git clean -fxd
-          
-          - name: prepare for publication 2
-            run: python setup.py build sdist --format=gztar
-          
-          - name: publish to PyPI [testing]
-            run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+          #- name: install package
+          #  run: pip install .
+          #
+          #- name: install publication deps
+          #  run: pip install twine
+          #
+          #- name: prepare for publication 1
+          #  run: git clean -fxd
+          #
+          #- name: prepare for publication 2
+          #  run: python setup.py build sdist --format=gztar
+          #
+          #- name: publish to PyPI [testing]
+          #  run: twine upload --repository-url https://test.pypi.org/legacy/ dist/*
