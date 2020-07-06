@@ -32,6 +32,9 @@ jobs:
           - name: Where am I
             run: pwd
 
+          - name: directory listing
+            run: ls -al
+
           #- name: Get custom action's output
           #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
 
