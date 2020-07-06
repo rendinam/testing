@@ -32,6 +32,12 @@ jobs:
           - name: Where am I
             run: pwd
 
+          - name: gcc?
+            run: which gcc
+
+          - name: clang
+            run: which clang
+
           - name: directory listing
             run: ls -al
 
