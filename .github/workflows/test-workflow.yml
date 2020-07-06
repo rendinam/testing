@@ -30,7 +30,7 @@ jobs:
             #    git_tag: $GITHUB_REF
 
           - name: Where am I
-             run: pwd
+            run: pwd
 
           #- name: Get custom action's output
           #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
