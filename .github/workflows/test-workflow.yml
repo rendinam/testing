@@ -13,11 +13,11 @@ jobs:
       runs-on: ubuntu-latest
       steps:
 
-          #- name: Setup up python 3.x
-          #  uses: actions/setup-python@v1
-          #  with:
-          #    python-version: '3.x'
-          #    architecture: 'x64'
+          - name: Setup up python 3.x
+            uses: actions/setup-python@v1
+            with:
+              python-version: '3.x'
+              architecture: 'x64'
 
           # Check out the commit containing this workflow file.
           - name: checkout repo
@@ -29,8 +29,8 @@ jobs:
             #with:
             #    git_tag: $GITHUB_REF
 
-          #- name: Where am I
-          #- run: pwd
+          - name: Where am I
+          - run: pwd
 
           #- name: Get custom action's output
           #- run: echo "The output was ${{ steps.custom_action_0.outputs.time }}"
