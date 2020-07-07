@@ -7,9 +7,9 @@ on:
 jobs:
   build:
       name: Publish release to PyPI (testing)
-      #env:
-      #  TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
-      #  TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+      env:
+        TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
       runs-on: ubuntu-latest
       steps:
 
